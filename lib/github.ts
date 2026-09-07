@@ -28,39 +28,56 @@ export type GithubData = {
 };
 
 async function fetchGithub<T>(path: string): Promise<T> {
-  const response = await fetch(`${GITHUB_API_URL}${path}`, {
-    headers: { Accept: "application/vnd.github+json" },
-  });
+  try {
+    const response = await fetch(`${GITHUB_API_URL}${path}`, {
+      headers: {
+        Accept: "application/vnd.github+json",
+      },
+    });
 
-  if (!response.ok) {
-    throw new Error(`GitHub API responded with ${response.status}`);
+    if (!response.ok) {
+      throw new Error(
+        `GitHub API responded with ${response.status} ${response.statusText}`
+      );
+    }
+
+    return (await response.json()) as T;
+  } catch (error) {
+    console.error("GitHub API error:", error);
+
+    throw new Error(
+      `Failed to fetch GitHub data: ${
+        error instanceof Error ? error.message : String(error)
+      }`
+    );
   }
-
-  return response.json() as Promise<T>;
 }
 
-export async function getGithubData(username: string): Promise<GithubData | null> {
+ export async function getGithubData(
+  username: string
+): Promise<GithubData | null> {
   try {
-    const [profile, repositories] = await Promise.all([
-      fetchGithub<GithubUserResponse>(`/users/${encodeURIComponent(username)}`),
-      fetchGithub<GithubRepositoryResponse[]>(
-        `/users/${encodeURIComponent(username)}/repos?per_page=100&sort=updated`
-      ),
-    ]);
+    const response = await fetch(
+      `https://api.github.com/users/${encodeURIComponent(username)}`
+    );
+
+    console.log("GITHUB STATUS:", response.status);
+    console.log("GITHUB URL:", response.url);
+
+    if (!response.ok) {
+      throw new Error(`GitHub API responded with ${response.status}`);
+    }
+
+    const profile = await response.json();
+
+    console.log("GITHUB PROFILE:", profile);
 
     return {
       publicRepositoryCount: profile.public_repos,
-      repositories: repositories.slice(0, 6).map((repository) => ({
-        name: repository.name,
-        url: repository.html_url,
-        description: repository.description,
-        stars: repository.stargazers_count,
-        language: repository.language,
-        updatedAt: repository.updated_at,
-      })),
+      repositories: [],
     };
   } catch (error) {
-    console.error("Failed to load GitHub profile data:", error);
+    console.error("GITHUB FETCH FAILED:", error);
     return null;
   }
 }

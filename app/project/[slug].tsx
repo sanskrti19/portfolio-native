@@ -110,16 +110,10 @@ export default function ProjectDetail() {
             <Image source={{ uri: project.cover }} style={styles.cover} resizeMode="cover" />
           </Reveal>
 
-          <Reveal style={styles.block}>
-            <View style={styles.blockLabel}>
-              <Text style={styles.blockIndex}>01</Text>
-              <Text style={styles.blockFile}>
-                <Text style={styles.blockSlashes}>{"// "}</Text>overview.md
-              </Text>
-            </View>
-            <Text style={styles.blockTitle}>Overview</Text>
-            <Text style={styles.blockBody}>{project.overview}</Text>
-          </Reveal>
+       <Reveal style={styles.block}>
+  <Text style={styles.blockTitle}>Overview</Text>
+  <Text style={styles.blockBody}>{project.overview}</Text>
+</Reveal>
 
           <Reveal style={styles.block}>
             <View style={styles.blockLabel}>

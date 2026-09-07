@@ -11,9 +11,7 @@ const socialLinks = [
   { icon: Linkedin, label: "LinkedIn", href: site.socials.linkedin },
 ].filter((link): link is { icon: typeof Github; label: string; href: string } => Boolean(link.href));
 
-// Point EXPO_PUBLIC_CONTACT_API_URL at a deployed backend (e.g. the original
-// Next.js app's /api/contact route) to send messages directly. Without it,
-// submitting opens the device's mail client with the message prefilled.
+ 
 const CONTACT_API_URL = process.env.EXPO_PUBLIC_CONTACT_API_URL;
 
 type Status = "idle" | "loading" | "success" | "error";
