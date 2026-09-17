@@ -1,11 +1,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import { Animated, Easing, ViewStyle } from "react-native";
 
-/**
- * React Native has no scroll-linked `whileInView` primitive as cheap as Framer Motion's,
- * so this animates in once on mount with an optional stagger delay — visually close to
- * the original site's reveal-on-scroll effect for a first render, without a scroll listener.
- */
+ 
 export function Reveal({
   children,
   delay = 0,

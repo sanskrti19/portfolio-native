@@ -12,8 +12,7 @@ export const site = {
     github: "https://github.com/sanskrti19",
     linkedin: undefined as string | undefined,
   },
-  // The actual PDF ships at /assets/resume.pdf and is opened via lib/resume.ts;
-  // this flag just controls whether the resume UI renders.
+ 
   hasResume: true,
   stats: [
     { label: "Featured projects", value: 3, suffix: "" },

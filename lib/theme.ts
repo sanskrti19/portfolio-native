@@ -33,7 +33,6 @@ export const radii = {
 
 export const spacing = (n: number) => n * 4;
 
-// Roughly mirrors the Tailwind `display-*` clamp() sizes, resolved for mobile viewports.
 export const displayText = {
   xl: { fontSize: 44, lineHeight: 46, letterSpacing: -1 },
   lg: { fontSize: 34, lineHeight: 38, letterSpacing: -0.8 },
