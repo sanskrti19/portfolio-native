@@ -4,10 +4,10 @@ dist/
 web-build/
 .env*.local
 
-# macOS
+ 
 .DS_Store
 
-# Xcode
+ 
 ios/
 *.pbxuser
 *.mode1v3
@@ -21,12 +21,12 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-# Android
+ 
 android/
 *.keystore
 !debug.keystore
 
-# TypeScript
+ 
 *.tsbuildinfo
 
 expo-env.d.ts

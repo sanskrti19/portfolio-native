@@ -1,19 +1,6 @@
-export type Project = {
-  slug: string;
-  title: string;
-  description: string;
-  cover: string;
-  tech: string[];
-  year: string;
-  liveUrl?: string;
-  githubUrl?: string;
-  overview: string;
-  problem: string;
-  solution: string;
-  architecture: string[];
-  challenges: string[];
-  lessons: string[];
-};
+export type Project = {  slug: string;  title: string;  description: string;  cover: string;  tech: string[];
+  year: string;  liveUrl?: string;  githubUrl?: string;  overview: string;  problem: string;  solution: string;
+  architecture: string[];  challenges: string[];  lessons: string[];};
 
 export const projects: Project[] = [
   {

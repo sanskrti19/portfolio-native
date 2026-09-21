@@ -2,17 +2,8 @@ import { ReactNode, useEffect, useRef } from "react";
 import { Animated, Easing, ViewStyle } from "react-native";
 
  
-export function Reveal({
-  children,
-  delay = 0,
-  y = 20,
-  style,
-}: {
-  children: ReactNode;
-  delay?: number;
-  y?: number;
-  style?: ViewStyle;
-}) {
+export function Reveal({  children,  delay = 0,  y = 20,  style,}: {  children: ReactNode;
+  delay?: number;  y?: number;  style?: ViewStyle;}) {
   const opacity = useRef(new Animated.Value(0)).current;
   const translateY = useRef(new Animated.Value(y)).current;
 
