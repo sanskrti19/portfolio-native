@@ -35,7 +35,7 @@ export function About() {
 }
 
 const styles = StyleSheet.create({
-  section: {    paddingVertical: 56,    gap: 32,  },
+  section: {paddingVertical: 56,gap: 32,  },
   title: {
     fontFamily: fonts.sansSemibold,
     fontSize: 26,
@@ -43,15 +43,10 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
     color: colors.ink,
   },
-  body: {    fontFamily: fonts.sans,    fontSize: 14,    lineHeight: 22,    color: colors.inkMuted,  },
-  list: {    marginTop: 24,    gap: 14,  },
-  listItem: {    flexDirection: "row",    alignItems: "flex-start",    gap: 10,  },
-  bullet: {    marginTop: 7,    width: 6,    height: 6,    borderRadius: 3,    backgroundColor: colors.accent,  },
-  listText: {
-    flex: 1,
-    fontFamily: fonts.sans,
-    fontSize: 13,
-    lineHeight: 20,
-    color: colors.inkMuted,
+  body: { fontFamily: fonts.sans, fontSize: 14, lineHeight: 22, color: colors.inkMuted,  },
+  list: { marginTop: 24, gap: 14,  },
+  listItem: { flexDirection: "row", alignItems: "flex-start", gap: 10,  },
+  bullet: { marginTop: 7, width: 6,height: 6,borderRadius: 3,backgroundColor: colors.accent,  },
+  listText: { flex: 1,fontFamily: fonts.sans, fontSize: 13, lineHeight: 20, color: colors.inkMuted,
   },
 });
