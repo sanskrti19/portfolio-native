@@ -62,7 +62,6 @@ export function Button({
   );
 }
 
-/** Wraps icon + label children with consistent button typography. */
 export function ButtonLabel({
   children,
   variant = "primary",
